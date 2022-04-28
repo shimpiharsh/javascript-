@@ -1,0 +1,82 @@
+<html>
+<head>
+<script type="text/javascript">
+//function to check email
+function check_email()
+{
+var email_add=document.getElementById("email").value
+atpos=email_add.indexOf("@")
+dotpos=email_add.lastIndexOf(".")
+if (atpos<1 || dotpos<atpos+2 )
+{
+alert("Not Valid Email, please try again.");
+return false
+}
+else
+{
+return true
+}
+}
+//function to check first name
+function check_null()
+{
+var x=document.getElementById("fname").value
+if (x.length==0)
+{
+alert("textfilled should not blank");
+return false
+}
+else
+{
+return true
+}
+}
+function only_char()
+{
+var x=document.getElementById("fname").value
+if (isNaN(x))
+{
+return false
+}
+else
+{
+alert("only characters allowed");
+return true
+}
+}
+//function to check mobile no
+function check_mob()
+{
+var y=document.getElementById("mob").value
+if (y.length!=10)
+{
+alert("invalid mobile no");
+return false
+}
+else
+{
+return true
+}
+}
+function only_num()
+{
+var x=document.getElementById("mob").value
+if (isNaN(x))
+{
+alert("only number allowed");
+return false
+}
+else
+{
+return true
+}
+}
+</script>
+</head>
+<body>
+First Name:<input type="text" id="fname" onkeypress="return only_char()" onblur="return check_null()" ><br><br>
+Mobile No:<input type="text" id="mob" onkeypress="return only_num()" onblur="return check_mob()" ><br><br>
+Enter Email:<input type="text" id="email"><br><br>
+<input type="button" Value="Check Email" onclick="return check_email()">
+</body>
+</html>
